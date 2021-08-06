@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+$breakpoint-up: (
+    'sm': 'screen and (min-width: 400px)',
+    'md': 'screen and (min-width: 896px)',
+    'lg': 'screen and (min-width: 1020px)',
+    ) !default;
+
+$breakpoint-down: (
+    'sm': 'screen and (max-width: 399px)',
+    'md': 'screen and (max-width: 897px)',
+    'lg': 'screen and (max-width: 1020px)',
+    ) !default;
+
+@mixin mq_up($breakpoint: md) {
+    @media #{map-get($breakpoint-up, $breakpoint)} {
+        @content;
+    }
+}
+
+@mixin mq_down($breakpoint: md) {
+    @media #{map-get($breakpoint-down, $breakpoint)} {
+        @content;
+    }
+}
+
+/* Color */
+$colorBlue: #373B50;
+$colorPink: #ED6C73;
+$colorGray: #797979;
+$colorGreem: #5CC964;
+$colorRed: #ED4646;
+
+/* BgColor */
+$bgMainColor: #F6F5F7;
+
+/* OtherColor */
+$colorTextLink: #3399ff;
+$colorBlackWhite: #1D1D1D;
+$colorBorderColor: #707070;
+
+
+
+/* ----------------------------------------------------------
+    foundation
+---------------------------------------------------------- */
+/* common */
+@import "./foundation/common/breadcrumbs";
+@import "./foundation/common/category";
+@import "./foundation/common/footer";
+@import "./foundation/common/header";
+@import "./foundation/common/lead";
+@import "./foundation/common/nav";
+@import "./foundation/common/sidebar";
+@import "./foundation/common/page";
+
+/* base */
+@import "./foundation/base/base";
+@import "./foundation/base/reset";
+
+
+/* ----------------------------------------------------------
+    layout
+---------------------------------------------------------- */
+@import "./layout/l-alart";
+@import "./layout/l-button";
+@import "./layout/l-content";
+@import "./layout/l-flexbox";
+@import "./layout/l-list";
+@import "./layout/l-main";
+@import "./layout/l-modal";
+@import "./layout/l-scroll";
+@import "./layout/l-top";
+@import "./layout/l-wrap";
+
+
+
+/* ----------------------------------------------------------
+    object
+---------------------------------------------------------- */
+/* component */
+@import "./object/component/c-button";
+@import "./object/component/c-headline";
+@import "./object/component/c-input";
+@import "./object/component/c-scroll";
+@import "./object/component/c-img";
+@import "./object/component/c-link";
+@import "./object/component/c-list";
+@import "./object/component/c-text";
+
+/* project */
+
+/* utility */
+@import "./object/utility/u-color";
+@import "./object/utility/u-hidden";
+@import "./object/utility/u-margin";
+@import "./object/utility/u-padding";
+@import "./object/utility/u-text";
+@import "./object/utility/u-width";

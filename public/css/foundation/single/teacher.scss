@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+$breakpoint-up: (
+    'sm': 'screen and (min-width: 400px)',
+    'md': 'screen and (min-width: 896px)',
+    'lg': 'screen and (min-width: 1020px)',
+    ) !default;
+
+$breakpoint-down: (
+    'sm': 'screen and (max-width: 399px)',
+    'md': 'screen and (max-width: 897px)',
+    'lg': 'screen and (max-width: 1020px)',
+    ) !default;
+
+@mixin mq_up($breakpoint: md) {
+    @media #{map-get($breakpoint-up, $breakpoint)} {
+        @content;
+    }
+}
+
+@mixin mq_down($breakpoint: md) {
+    @media #{map-get($breakpoint-down, $breakpoint)} {
+        @content;
+    }
+}
+
+/* Color */
+$colorBlue: #373B50;
+$colorPink: #ED6C73;
+$colorGray: #797979;
+$colorGreem: #5CC964;
+$colorRed: #ED4646;
+
+/* BgColor */
+$bgMainColor: #F6F5F7;
+
+/* OtherColor */
+$colorTextLink: #3399ff;
+$colorBlackWhite: #1D1D1D;
+$colorBorderColor: #707070;
+
+

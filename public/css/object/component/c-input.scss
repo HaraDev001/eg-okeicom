@@ -1,0 +1,314 @@
+
+/* 背景グレーのinput box */
+.c-input--gray {
+    background: #F5F5F5;
+    border: 1px solid #e7e7e7;
+}
+
+/* submitのボタン */
+.c-submit--blue {
+    background: #373B50;
+    color: #fff;
+    border: 1px solid #373B50;
+}
+
+/* セレクトボックスの右側に三角形を入れる */
+.c-selectBox {
+    position: relative;
+    &:before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 7px 6px 0 6px;
+        border-color: #000 transparent transparent transparent;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+/* インプットファイル */
+// .c-input--file {
+//     position: relative;
+//     width: 100%;
+//     padding: 10px;
+//     border-radius: 3px;
+//     min-height: 38px;
+//     border: 1px solid #B4B4B4;
+//     input[type=file] {
+//         opacity: 0;
+//         position: absolute;
+//         right: 0;
+//         left: 0;
+//         top: 0;
+//         bottom: 0;
+//     }
+// }
+/* 変更不可のエリア */
+.c-input--fixed {
+    background: #f2f2f2;
+    border-radius: 3px;
+    border: none !important;
+}
+
+/* おしゃれチェックボックス */
+.c-checkbox--fashonable {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    padding-top: 3px;
+    input[type=checkbox],
+    input[type=radio] {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+        left: 0;
+    }
+    label {
+        padding-top: 5px;
+    }
+    .color-box {
+        position: absolute;
+        top: 2px;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background: #e6e6e6;
+        &:after {
+            content: '';
+            position: absolute;
+            display: none;
+            left: 9px;
+            top: 5px;
+            width: 4px;
+            height: 9px;
+            border: solid #fff;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+    }
+    &.circle {
+        height: 30px;
+        .color-box {
+            padding-left: 0;
+            width: 26px;
+            height: 26px;
+            background: #fff;
+            border: 1px solid #707070;
+            border-radius: 50%;
+            &:after {
+                top: 3px;
+                width: 8px;
+                height: 16px;
+            }
+        }
+    }
+}
+
+.c-checkbox--fashonable input:checked ~ .color-box {
+    background: #ED6C73;
+    &:after {
+        display: block;
+    }
+}
+.c-checkbox--fashonable.circle input:checked ~ .color-box {
+    border: 1px solid #ED6C73;
+}
+
+/* 画像5つを横並び */
+
+.c-input--file--five {
+    width: 100%;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    /* 横幅いっぱい */
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    /* 横並び */
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    overflow: hidden;
+    @include mq_down(md) {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+    .c-input--file--five--inner {
+        width: 32%;
+        position: relative;
+        background: #EDEDED;
+        @include mq_down(md) {
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(4) {
+                margin-right: 2%;
+            }
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3) {
+                margin-bottom: 2%;
+            }
+        }
+        @include mq_up(md) {
+            width: 19%;
+        }
+        img {
+            position: absolute;
+        }
+        .add-file {
+            position: absolute;
+            display: none;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            border: 1px dashed #ED6C73;
+            background: #fff;
+            &.active {
+                display: block;
+                input {
+                    z-index: 1;
+                    cursor: pointer !important;
+                }
+            }
+            &:before {
+                content: "";
+                display: block;
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                z-index: 1;
+                -webkit-transform: translate(-50%,-50%) scale(1);
+                transform: translate(-50%,-50%) scale(1);
+                background: url(/../../img/common/icon-add-pink.png) center/contain no-repeat;
+                @include mq_up(md) {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+            input[type=file] {
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .change-file {
+            cursor: pointer;
+            position: absolute;
+            
+            width: 35px;
+            height: 35px;
+            text-align: center;
+            display: none;
+            @include mq_up(md) {
+                width: 40px;
+                height: 40px;
+                bottom: 0;
+                right: 0;
+            }
+            @include mq_down(md) {
+                top: 0;
+                left: 0;
+            }
+            &.active {
+                z-index: 10;
+                display: block;
+            }
+            .change-file-inner {
+                display: block;
+                position: relative;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                img {
+                    right: 0;
+                    bottom: 0;
+                }
+                input {
+                    opacity: 0;
+                    position: absolute;
+                    right: 0;
+                    border: 1px solid #B4B4B4;
+                    width: 100%;
+                    padding: 10px;
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 3px;
+                    resize: none;
+                    @include mq_up(md) {
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+            }
+        }
+        @include mq_up(md) {
+            .delete-file {
+                display: none;
+                &.active {
+                    display: block;
+                }
+                &:before,
+                &:after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                }
+            }
+        }
+        @include mq_down(md) {
+            .delete-icon {
+                cursor: pointer;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 35px;
+                height: 35px;
+                text-align: center;
+                display: none;
+                img {
+                    position: static;
+                }
+                &.active {
+                    z-index: 10;
+                    display: block;
+                }
+            }
+        }
+    }
+}
+@include mq_up(md) {
+    .c-input--file--five .c-img--cover:hover .delete-file:before {
+        background: rgba(0,0,0,0.5);
+        z-index: 1;
+    }
+
+    .couse-detail-img .c-img--cover:hover .delete-file:after {
+        background: url(/../img/common/icon-batsu-white.png) center/contain no-repeat;
+        width: 50px;
+        height: 50px;
+        top: 50%;
+        left: 50%;
+        z-index: 2;
+        -webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+    }
+}

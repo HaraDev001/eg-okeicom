@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+$breakpoint-up: (
+    'sm': 'screen and (min-width: 400px)',
+    'md': 'screen and (min-width: 896px)',
+    'lg': 'screen and (min-width: 1020px)',
+    ) !default;
+
+$breakpoint-down: (
+    'sm': 'screen and (max-width: 399px)',
+    'md': 'screen and (max-width: 897px)',
+    'lg': 'screen and (max-width: 1020px)',
+    ) !default;
+
+@mixin mq_up($breakpoint: md) {
+    @media #{map-get($breakpoint-up, $breakpoint)} {
+        @content;
+    }
+}
+
+@mixin mq_down($breakpoint: md) {
+    @media #{map-get($breakpoint-down, $breakpoint)} {
+        @content;
+    }
+}
+
+/* Color */
+$colorBlue: #373B50;
+$colorPink: #ED6C73;
+$colorGray: #797979;
+$colorGreem: #5CC964;
+$colorRed: #ED4646;
+
+/* BgColor */
+$bgMainColor: #F6F5F7;
+
+/* OtherColor */
+$colorTextLink: #3399ff;
+$colorBlackWhite: #1D1D1D;
+$colorBorderColor: #707070;
+
+.lesson-application--sum {
+    margin-right: 0;
+    margin-left: auto;
+    background: #FAFAFA;
+    border: 3px;
+    td {
+        text-align: right;
+        color: #9D9D9D;
+        font-weight: 400;
+        padding: 10px 20px;
+    }
+}
+
+/* 支払い方法を選択する */
+.paymentBox {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    
+    &:not(:last-child) {
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px dashed #eee;
+    }
+    input[type=radio] {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+    .paymentBoxColor {
+        position: absolute;
+        top: 2px;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background: #e6e6e6;
+        &:after {
+            content: '';
+            position: absolute;
+            display: none;
+            left: 9px;
+            top: 5px;
+            width: 4px;
+            height: 9px;
+            border: solid #fff;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+    }
+    .paymentBoxOther {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+}
+.paymentBox input:checked ~ .paymentBoxColor {
+    background: #ED6C73;
+    &:after {
+        display: block;
+    }
+}

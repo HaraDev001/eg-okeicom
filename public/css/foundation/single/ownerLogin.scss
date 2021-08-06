@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+$breakpoint-up: (
+    'sm': 'screen and (min-width: 400px)',
+    'md': 'screen and (min-width: 896px)',
+    'lg': 'screen and (min-width: 1020px)',
+    ) !default;
+
+$breakpoint-down: (
+    'sm': 'screen and (max-width: 399px)',
+    'md': 'screen and (max-width: 897px)',
+    'lg': 'screen and (max-width: 1020px)',
+    ) !default;
+
+@mixin mq_up($breakpoint: md) {
+    @media #{map-get($breakpoint-up, $breakpoint)} {
+        @content;
+    }
+}
+
+@mixin mq_down($breakpoint: md) {
+    @media #{map-get($breakpoint-down, $breakpoint)} {
+        @content;
+    }
+}
+
+/* Color */
+$colorBlue: #373B50;
+$colorPink: #ED6C73;
+$colorGray: #797979;
+$colorGreem: #5CC964;
+$colorRed: #ED4646;
+
+/* BgColor */
+$bgMainColor: #F6F5F7;
+
+/* OtherColor */
+$colorTextLink: #3399ff;
+$colorBlackWhite: #1D1D1D;
+$colorBorderColor: #707070;
+
+
+/*  */
+
+.owner-login-wrap {
+    height: 100vh;
+    width: 100%;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    /* 横幅いっぱい */
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    /* 横並び */
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+}
+.owner-login-input {
+    width: 300px;
+    border-radius: 3px;
+    background: #fff;
+    padding: 30px;
+}
+.owner-login-input-content {
+    &:not(:last-child) {
+        margin-bottom: 26px;
+    }
+    input:not([type=submit]) {
+        width: 100%;
+        padding: 10px;
+        border-radius: 3px;
+        border: 1px solid #B4B4B4;
+    }
+    p {
+        font-size: .9em;
+    }
+    button,
+    input[type=submit] {
+        width: 100%;
+        padding: 13px 0;
+        text-align:center;
+        background: #ED6C73;
+        color: #fff;
+        border-radius: 3px;
+    }
+}

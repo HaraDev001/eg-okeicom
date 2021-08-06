@@ -1,0 +1,169 @@
+/*-----------------------------------------------------------------------------------------
+
+
+
+  スクロール
+
+
+
+------------------------------------------------------------------------------------------*/
+.c-scroll__title {
+	margin-bottom: 15px;
+	@include mq_down(md) {
+		padding: 0 20px;
+	}
+	h2 {
+		font-size: 18px;
+		font-weight: 700;
+		@include mq_up(md) {
+			font-size: 28px;
+		}
+	}
+	a {
+		font-size: 13px;
+		font-weight: 700;
+		display: inline-block;
+		position: relative;
+		padding-right: 15px;
+		&:before {
+			content: "";
+			display: block;
+			width: 11px;
+			height: 11px;
+			background: url(/../img/common/icon-arrow-right-black.png) center/contain no-repeat;
+			position: absolute;
+			top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+		}
+	}
+}
+.c-scroll__box {
+    width: 130px;
+    min-width: 130px;
+	margin-right: 10px;
+	vertical-align: text-top;
+	position: relative;
+	@include mq_up(md) {
+        width: 184px;
+        min-width: 184px;
+		margin-right: 2%;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+.c-scroll__box__inner {
+	position: relative;
+	display: block;
+	background: #fff;
+	border-radius: 3px;
+	@include mq_down(md) {
+		padding: 10px;
+	}
+}
+.c-scroll__box__teacher {
+	z-index: 1;
+	margin: -22.5px 0 10px;
+	height: 45px;
+	padding-left: 10px;
+	.c-scroll__box__teacher__img {
+		border-radius: 50%;
+		background: #fff;
+		padding: 3px;
+		width: 45px;
+		box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+		z-index: 1;
+	}
+	.c-scroll__box__teacher__img__inner {
+		img {
+			width: 100%;
+		}
+	}
+	.c-scroll__box__teacher__evaluation {
+		img {
+			width: 16px;
+		}
+		.evaluationNumber {
+			font-size: 12px;
+			font-weight: 700;
+		}
+	}
+}
+.c-scroll__box__detail {
+	margin-bottom: .5em;
+	.number {
+		font-size: 12px;
+		display: inline-block;
+		border-radius: 3px;
+		background: $colorBlue;
+		color: #fff;
+		padding: 1px 5px;
+	}
+	.price {
+		color: $colorPink;
+		font-weight: 700;
+	}
+}
+.c-scroll__box__text {
+	height: 38px;
+	p {
+		white-space: normal;
+		font-weight: 700;
+	}
+}
+.c-scroll__box__time {
+	font-size: 11px;
+	color: #9D9D9D;
+	> .date {
+		display: inline-block;
+		margin-right: 10px;
+	}
+	> time {
+
+	}
+}
+
+
+
+/* 講師のスクロール
+---------------------------------------------------------------------------------------- */
+.c-teacher--box {}
+.c-teacher--box__inner {}
+.c-teacher--box__img {
+	width: 100%;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-bottom: 5px;
+}
+.c-teacher--box__name {
+	text-align: center;
+	font-weight: 700;
+	margin-bottom: 5px;
+	@include mq_up(md) {
+		font-size: 16px;
+	}
+}
+.c-teacher--box__evaluation {
+	margin-bottom: 5px;
+	img {
+		width: 20px;
+		height: 20px;
+	}
+}
+.c-teacher--box__category {
+	li {
+		font-size: 11px;
+		color: #b5b5b5;
+		margin-bottom: 3px;
+		&:not(:last-child):after {
+			content: "/";
+			padding: 0 3px;
+			display: inline-block;
+		}
+		span {
+			color: #b5b5b5;
+		}
+	}
+}
+

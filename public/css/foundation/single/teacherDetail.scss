@@ -1,0 +1,131 @@
+@charset "UTF-8";
+
+$breakpoint-up: (
+    'sm': 'screen and (min-width: 400px)',
+    'md': 'screen and (min-width: 896px)',
+    'lg': 'screen and (min-width: 1020px)',
+    ) !default;
+
+$breakpoint-down: (
+    'sm': 'screen and (max-width: 399px)',
+    'md': 'screen and (max-width: 897px)',
+    'lg': 'screen and (max-width: 1020px)',
+    ) !default;
+
+@mixin mq_up($breakpoint: md) {
+    @media #{map-get($breakpoint-up, $breakpoint)} {
+        @content;
+    }
+}
+
+@mixin mq_down($breakpoint: md) {
+    @media #{map-get($breakpoint-down, $breakpoint)} {
+        @content;
+    }
+}
+
+/* Color */
+$colorBlue: #373B50;
+$colorPink: #ED6C73;
+$colorGray: #797979;
+$colorGreem: #5CC964;
+$colorRed: #ED4646;
+
+/* BgColor */
+$bgMainColor: #F6F5F7;
+
+/* OtherColor */
+$colorTextLink: #3399ff;
+$colorBlackWhite: #1D1D1D;
+$colorBorderColor: #707070;
+
+
+
+.teacherDetail-profile {
+    @include mq_up(md) {
+        display:-webkit-box;
+        display:-ms-flexbox;
+        display:flex;
+        /* 横幅いっぱい */
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        /* 横並び */
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+    .teacherDetail-profile-detail {
+        text-align: center;
+        @include mq_up(md) {
+            width: 280px;
+        }
+        .c-img--shadow {
+            border-radius: 50%;
+            overflow: hidden;
+            width: 150px;
+            height: 150px;
+            margin: auto auto 20px;
+            border-radius: 50%;
+            @include mq_up(md) {
+                padding: 5px;
+            }
+        }
+        .c-text--evaluation {
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+        .c-text--category {
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+    }
+    .teacherDetail-profile-detail-tab {
+        border: 1px solid #F0F0F0;
+        display:-webkit-box;
+        display:-ms-flexbox;
+        display:flex;
+        /* 横幅いっぱい */
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        /* 横並び */
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        .tabBox {
+            position: relative;
+            width: 33.3333%;
+            padding: 25px 0 10px;
+            text-align: center;
+            background: #fff;
+            &:not(:last-child) {
+                border-right: 1px solid #F0F0F0;
+            }
+            span {
+                position: absolute;
+                display: inline-block;
+                left: 5px;
+                top: 5px;
+                font-size: 11px;
+                color: #C7C7C7;
+            }
+        }
+    }
+    .teacherDetail-profile-text {
+        @include mq_up(md) {
+            width: 710px;
+        }
+        @include mq_down(md) {
+            margin-top: 10px;
+            padding: 20px;
+            background: #fff;
+        }
+    }
+}
+
+
+

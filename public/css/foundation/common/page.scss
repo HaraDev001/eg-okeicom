@@ -1,0 +1,188 @@
+.l-page {
+    @include mq_down(md) {
+        background: #fff;
+        padding: 20px;
+    }
+    h2 {
+        background-color: #eeeeee;
+        font-weight: 700;
+        padding: 20px;
+        font-size: 24px;
+        margin: 55px -20px 35px;
+        @include mq_down(md) {
+            padding: 10px;
+            font-size: 18px;
+            margin: 40px -10px 20px;
+        }
+    }
+    h3 {
+        font-weight: 700;
+        font-size: 22px;
+        padding: 10px 0;
+        margin: 45px 0px 30px;
+        border-bottom: 2px solid #ED6C73;
+        @include mq_down(md) {
+            font-size: 16px;
+            padding: 8px 0;
+            margin: 20px 0px 15px;
+        }
+    }
+    p {
+        line-height: 1.8;
+        margin: 0 0 30px;
+        @include mq_down(md) {
+            margin: 0 0 25px;
+        }
+    }
+    img {
+        max-width: 100%;
+        width: auto;
+    }
+    ul {
+        padding-left: 10px;
+        li {
+            position: relative;
+            padding-left: 10px;
+            line-height: 1.6;
+            @include mq_up(md) {
+                padding-left: 15px;
+            }
+            &:before {
+                content: "";
+                display: block;
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                background: #000;
+                position: absolute;
+                left: 0;
+                top: 9px;
+
+            }
+            &:not(:last-child) {
+                margin-bottom: 0.5em;
+            }
+        }
+        &.c-list--question {
+            padding-left: 0;
+            li {
+                margin-bottom: 1em;
+                padding-bottom: 1em;
+                border-bottom: 1px solid #F0F0F0;
+                &:before {
+                    content: none;
+                }
+            }
+            .question,
+            .answer {
+                padding-right: 40px;
+                padding-left: 20px;
+                position: relative;
+                &:before {
+                    position: absolute;
+                    display: block;
+                    left: 0;
+                    top: 0;
+                    font-size: 1.1em;
+                }
+            }
+            .question {
+                &:before {
+                    content: "Q";
+                    color: #000;
+                    font-weight: 700;
+                }
+            }
+            .answer {
+                margin-top: 1em;
+                display: none;
+                opacity: 0;
+                &.open {
+                    display: block;
+                    opacity: 1;
+                }
+                &:before {
+                    content: "A";
+                    color: #ED6C73;
+                    font-weight: 700;
+                }
+            }
+            .toggleAnswerPanelButton {
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 30px;
+                height: 30px;
+                background: url(/../../img/common/icon-arrow-button.png) center/contain no-repeat;
+                &.rotate {
+                    transform: rotate(-180deg);
+                }
+            }
+        }
+    }
+    ol {
+        counter-reset: item;
+        list-style-type: none;
+        padding-left: 0;
+        ol {
+            counter-reset: item;
+            margin-bottom: .5em;
+            li:before {
+                counter-increment: item;
+                content: counters(item, "-") ".";
+            }
+        }
+        li{
+            text-indent: -1.3em;
+            padding-left: 1.3em;
+            line-height: 1.6;
+            margin-bottom: .5em;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            @include mq_up(md) {
+                line-height: 1.8;
+            }
+            &:before {
+                counter-increment: item;
+                content: counter(item)'.';
+                /* 以下は自由に装飾... */
+                padding-right: .5em;
+            }
+        }
+        &.non-number li:before {
+            content:"";
+            padding-right: 0;
+        }
+        &.term-list > li {
+            margin-top: 1em;
+        }
+    }
+
+    table {
+        width: 100%;
+        word-break: break-all;
+        word-wrap: break-all;
+        * {
+            font-size: inherit;
+        }
+        th {
+            font-weight: 400;
+            text-align: left;
+            border: solid 1px #e6e6e6;
+            padding: 10px;
+            vertical-align: middle;
+            color: #333;
+            background: #f6f6f6;
+            width: 120px;
+        }
+        td {
+            padding: 10px;
+            background: #fff;
+            border: solid 1px #e6e6e6;
+            vertical-align: top;
+            color: #333;
+            text-align: left;
+        }
+    }
+}

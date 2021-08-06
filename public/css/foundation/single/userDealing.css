@@ -1,0 +1,245 @@
+﻿body {
+    background-color: #f6f5f7 !important;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.user-detaling-total {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #EFEFEF
+}
+
+@media screen and (min-width: 896px) {
+    .user-detaling-total {
+        margin-bottom: 20px;
+        padding-bottom: 20px
+    }
+}
+
+@media screen and (max-width: 897px) {
+    .user-detaling-total {
+        padding: 10px 20px
+    }
+}
+
+.user-detaling-total--price {
+    position: relative;
+    border: 1px solid #B4B4B4;
+    border-radius: 3px;
+    flex: 1;
+    height: 50px;
+    line-height: 50px;
+    text-align: center
+}
+
+@media screen and (max-width: 897px) {
+    .user-detaling-total--price {
+        margin-bottom: 10px
+    }
+}
+
+@media screen and (min-width: 896px) {
+    .user-detaling-total--price {
+        height: 60px;
+        line-height: 60px;
+        border-radius: 3px 0 0 3px
+    }
+}
+
+.user-detaling-total--price:before {
+    content: "保有金額";
+    display: block;
+    font-size: 10px;
+    color: #616680;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    height: auto;
+    line-height: 1em
+}
+
+@media screen and (min-width: 896px) {
+    .user-detaling-total--price:before {
+        left: 5px;
+        top: 5px;
+        font-size: 12px
+    }
+}
+
+.user-detaling-total--price span {
+    font-size: 16px;
+    font-weight: 700
+}
+
+@media screen and (min-width: 896px) {
+    .user-detaling-total--price span {
+        font-size: 20px
+    }
+}
+
+.user-detaling-total--request {
+    width: 100%
+}
+
+@media screen and (min-width: 896px) {
+    .user-detaling-total--request {
+        width: 200px
+    }
+}
+
+.user-detaling-total--request a {
+    display: block;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background: #373B50;
+    border-radius: 3px;
+    color: #fff
+}
+
+@media screen and (min-width: 896px) {
+    .user-detaling-total--request a {
+        height: 60px;
+        line-height: 60px;
+        border-radius: 0 3px 3px 0
+    }
+}
+
+.user-detaling-total--request a.disabled {
+    background: #dcdcdc;
+    pointer-events: none
+}
+
+.l-list--deal--period {
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    border-bottom: 1px solid #EFEFEF;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    align-items: center
+}
+
+@media screen and (min-width: 896px) {
+    .l-list--deal--period {
+        margin-bottom: 10px;
+        padding: 0 0 10px 0
+    }
+}
+
+.l-list--deal--period p {
+    margin-right: 1em
+}
+
+.l-list--deal--period .c-selectBox {
+    width: 150px
+}
+
+@media screen and (min-width: 896px) {
+    .l-list--deal--period .c-selectBox {
+        width: 200px
+    }
+}
+
+.l-list--deal--period .c-selectBox select {
+    border: 1px solid #B4B4B4;
+    width: 100%;
+    padding: 10px
+}
+
+@media screen and (min-width: 896px) {
+    .l-list--deal--detail table {
+        font-size: 13px;
+        width: 100%;
+        border: 1px solid #d9d9d9
+    }
+    .l-list--deal--detail table thead {
+        color: gray;
+        line-height: 30px;
+        background: #e5e5e5;
+        text-align: center;
+        border-right: 1px solid #d9d9d9
+    }
+    .l-list--deal--detail table thead td {
+        border-right: 1px solid #d9d9d9
+    }
+    .l-list--deal--detail table tbody tr {
+        border-bottom: 1px solid #e6e6e6;
+        background: #f7f7f7
+    }
+    .l-list--deal--detail table tbody tr:nth-child(2n) {
+        background: #fff
+    }
+    .l-list--deal--detail table tbody td {
+        padding: 10px;
+        vertical-align: middle
+    }
+    .l-list--deal--detail table tbody td:not(:last-child) {
+        border-right: 1px solid #d9d9d9
+    }
+    .l-list--deal--detail table tbody td.price {
+        white-space: nowrap
+    }
+}
+
+@media screen and (max-width: 897px) {
+    .l-list--deal--detail--content {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding: 20px;
+        border-bottom: 1px solid #EFEFEF
+    }
+    .l-list--deal--detail--content .price {
+        width: 125px
+    }
+    .l-list--deal--detail--content .detail {
+        flex: 1;
+        text-align: right;
+        color: #9D9D9D;
+        font-size: 12px
+    }
+    .l-list--deal--detail--content .detail *:not(:last-child) {
+        margin-bottom: 5px
+    }
+    .l-list--deal--detail--content .trade {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 3px
+    }
+    .l-list--deal--detail--content .trade.add {
+        color: #373B50
+    }
+    .l-list--deal--detail--content .trade.minus {
+        color: #E58484
+    }
+    .l-list--deal--detail--content .balance {
+        font-size: 12px
+    }
+}
+
+
+/*# sourceMappingURL=userDealing.css.map */

@@ -1,0 +1,50 @@
+.topScreen {
+	height: 323px;
+	background: url(/img/common/screen-top.jpg) center/cover no-repeat;
+	@include mq_up(md) {
+		height: 563px;
+	}
+	> .l-allWrapper {
+		height: 100%;
+		padding: 0 20px;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+	}
+}
+.topScreen__title {
+	font-size: 28px;
+	font-weight: 700;
+	@include mq_up(md) {
+		font-size: 53px;
+	}
+}
+.topScreen__sub {
+	margin-top: 1em;
+	margin-bottom: 3em;
+	@include mq_up(md) {
+		font-size: 23px;
+	}
+}
+.topScreen__link {
+	.c-button--round {
+		@include mq_up(md) {
+			margin-left: 0;
+			width: 250px;
+			font-size: 16px;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+

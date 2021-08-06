@@ -1,0 +1,561 @@
+@charset "UTF-8";
+
+$breakpoint-up: (
+    'sm': 'screen and (min-width: 400px)',
+    'md': 'screen and (min-width: 896px)',
+    'lg': 'screen and (min-width: 1020px)',
+    ) !default;
+
+$breakpoint-down: (
+    'sm': 'screen and (max-width: 399px)',
+    'md': 'screen and (max-width: 897px)',
+    'lg': 'screen and (max-width: 1020px)',
+    ) !default;
+
+@mixin mq_up($breakpoint: md) {
+    @media #{map-get($breakpoint-up, $breakpoint)} {
+        @content;
+    }
+}
+
+@mixin mq_down($breakpoint: md) {
+    @media #{map-get($breakpoint-down, $breakpoint)} {
+        @content;
+    }
+}
+
+/* Color */
+$colorBlue: #373B50;
+$colorPink: #ED6C73;
+$colorGray: #797979;
+$colorGreem: #5CC964;
+$colorRed: #ED4646;
+
+/* BgColor */
+$bgMainColor: #F6F5F7;
+
+/* OtherColor */
+$colorTextLink: #3399ff;
+$colorBlackWhite: #1D1D1D;
+$colorBorderColor: #707070;
+
+
+.l-lessonDetail {
+    border-bottom: #F6F5F7 1px solid;
+}
+.l-lessonDetail__img__thumb {
+
+}
+.l-lessonDetail__img__list {}
+
+
+/*-----------------------------------------------------------------------------------------
+
+
+
+    header
+
+
+
+------------------------------------------------------------------------------------------*/
+
+.l-lessonDetail__browsing {
+    padding: 24px 0 0;
+    .l-allWrapper {
+        @include mq_down(md) {
+            padding: 0 20px;
+        }
+        @include mq_up(md) {
+            width: 600px;
+            margin: auto;
+        }
+    }
+    a {
+        display: block;
+        padding: 15px 0;
+        text-align: center;
+        background: #fff;
+        border-radius: 3px;
+        border: 1px solid #3188FF;
+        color: #3188FF;
+        transition: .3s all;
+        @include mq_up(md) {
+            padding: 20px 0;
+        }
+        &:hover {
+            background: #3188FF;
+            color: #fff;
+        }
+    }
+    p {
+        padding: 15px 0;
+        text-align: center;
+        border-radius: 3px;
+        @include mq_up(md) {
+            padding: 20px 0;
+        }
+    }
+    p.lesson-fin {
+        background: #9D9D9D;
+        color: #fff;
+    }
+    p.lesson-wait {
+        background: #fff;
+        border: 1px solid #ED6C73;
+        color: #ED6C73;
+    }
+}
+.l-lessonDetail__header {
+    padding: 24px 0 0;
+    @include mq_up(md) {
+        padding: 42px 0;
+    }
+}
+.l-lessonDetail__header__inner {
+    @include mq_up(md) {
+        height: 295px;
+    }
+}
+/* レッスン画像まわり（コースの画像引用） */
+
+.c-lessonDetail__img {
+    @include mq_down(md) {
+        width: 100%;
+        padding: 0 20px;
+    }
+    @include mq_up(md) {
+        float: left;
+        width: 365px;
+        margin-right: 24px;
+    }
+    .c-lessonDetail__img__thumb {
+        width: 100%;
+        @include mq_up(md) {
+            width: 295px;
+        }
+        @include mq_down(md) {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.c-lessonDetail__img__list {
+    @include mq_down(md) {
+        width: 100%;
+        display:-webkit-box;
+        display:-ms-flexbox;
+        display:flex;
+        /* 横幅いっぱい */
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        /* 横並び */
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    li {
+        width: 55px;
+        margin-bottom: 5px;
+        position: relative;
+        &:before {
+            content: "";
+            display: block;
+            padding-top: 100%;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+        > img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%,-50%);
+            object-fit: cover;
+            font-family: 'object-fit: cover;';
+        }
+    }
+}
+
+/* レッスン情報 */
+.c-lessonDetail__headline {
+    @include mq_up(md) {
+        width: 611px;
+        float: right;
+        margin-right: 0;
+        margin-left: auto;
+    }
+    @include mq_down(md) {
+        padding: 0 20px;
+    }
+    .title {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+    .sub {
+        margin-bottom: 12px;
+        @include mq_up(md) {
+            margin-bottom: 40px;
+        }
+        span {
+            display: inline-block;
+            background: #fff;
+            border-radius: 10px;
+            padding: 5px 20px;
+            font-size: 12px;
+        }
+        .application {
+            color: #9D9D9D;
+            margin-right: 5px;
+        }
+        .evaluation {
+            img {
+                vertical-align: middle;
+                width: 10px;
+            }
+        }
+    }
+}
+.c-lessonDetail__info {
+    @include mq_up(md) {
+        width: 611px;
+        margin-right: 0;
+        margin-left: auto;
+        float: right;
+    }
+    @include mq_down(md) {
+        background: #fff;
+        padding: 20px;
+    }
+    .other {
+        @include mq_up(md) {
+            height: 76px;
+        }
+        .other__price {
+            @include mq_down(md) {
+                width: 100%;
+                background: #F8F8F8;
+                text-align: center;
+                padding: 15px 0;
+                margin-bottom: 15px;
+            }
+            .price {
+                font-size: 20px;
+                font-weight: 700;
+            }
+            .cancel {
+                font-size: 12px;
+                color: #9D9D9D;
+            }
+        }
+        .other__date {
+            @include mq_up(md) {
+                height: 76px;
+                width: 197px;
+                display:-webkit-box;
+                display:-ms-flexbox;
+                display:flex;
+                -webkit-align-items: center;
+                -ms-align-items: center;
+                align-items: center;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                border-left: 1px solid #E6E6E6;
+                border-right: 1px solid #E6E6E6;
+            }
+            p {
+                text-align: left;
+                font-size: 16px;
+                font-weight: 700;
+                @include mq_up(md) {
+                font-size: 20px;
+                }
+            }
+            .week {
+                font-size: 14px;
+            }
+        }
+        .other_reserve {
+            a {
+                display: block;
+                width: 160px;
+                height: 43px;
+                line-height: 43px;
+                background: #ED6C73;
+                color: #fff;
+                text-align: center;
+            }
+        }
+    }
+}
+
+
+/*-----------------------------------------------------------------------------------------
+
+
+
+  body
+
+
+
+------------------------------------------------------------------------------------------*/
+
+.l-lessonDetail__body {
+    @include mq_up(md) {
+        background: #fff;
+        padding: 42px 0;
+    }
+}
+
+
+/* main
+------------------------------------------------------------------------------------------*/
+.l-lessonDetail__body__main {
+    flex: 1;
+}
+
+
+/* 詳細 */
+.c-lessonDetail__content {
+    margin-top: 24px;
+    @include mq_up(md) {
+        &:not(:last-child) {
+            padding-bottom: 48px;
+            margin-bottom: 48px;
+            border-bottom: 1px solid #F0F0F0;
+        }
+    }
+}
+.c-lessonDetail__content__title {
+    @include mq_down(md) {
+        padding: 0 20px;
+    }
+    h2 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        @include mq_up(md) {
+        font-size: 20px;
+        margin-bottom: 24px;
+        }
+    }
+}
+.c-lessonDetail__content__wrap {
+    @include mq_down(md) {
+        background: #fff;
+        padding: 20px;
+    }
+    &.lesson-detail {
+        .detail {
+            margin-bottom: 24px;
+            line-height: 1.5;
+            font-size: 13px;
+        }
+        table {
+            width: 100%;
+            word-break: break-all;
+            word-wrap: break-all;
+            * {
+                font-size: inherit;
+            }
+            th,
+            td {
+                padding: 15px;
+                text-align: left;
+                border: solid 1px #F0F0F0;
+            }
+            th {
+                width: 110px;
+                border: solid 1px #F0F0F0;
+                vertical-align: middle;
+                font-weight: 600;
+                background: #FAFAFA;
+                @include mq_up(md) {
+                    width: 170px;
+                }
+            }
+            td {
+                padding: 15px;
+                background: #fff;
+                vertical-align: top;
+                .category {
+                    color: #ED6C73;
+                    margin-right: 5px;
+                    margin-bottom: 5px;
+                    display: inline-block;
+                    padding: 3px 10px;
+                    border: 1px solid #ED6C73;
+                    border-radius: 30px;
+                }
+            }
+        }
+    }
+}
+
+
+/* 口コミ */
+.c-userComment__box {
+    &:not(:last-child) {
+        margin-bottom: 24px;
+    }
+    }
+.c-userComment__human {
+    margin-bottom: 12px;
+
+    > .img {
+        border-radius: 50%;
+        background: #fff;
+        padding: 3px;
+        margin-right: 20px;
+        width: 75px;
+        box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+        z-index: 1;
+    }
+    > .info {
+        .name {
+            font-size: 12px;
+            margin-bottom: 3px;
+        }
+        .other {
+            vertical-align: middle;
+            font-size: 12px;
+            .evaluation {
+                img {
+                    width: 12px;
+                    height: 12px;
+                    vertical-align: middle;
+                }
+            }
+            .date {
+                color: #9D9D9D;
+            }
+        }
+    }
+}
+.c-userComment__content {
+    background: #FAFAFA;
+    padding: 10px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* sidebar
+------------------------------------------------------------------------------------------*/
+.l-lessonDetail__body__sidebar {
+    @include mq_up(md) {
+        border-left: 1px solid #F0F0F0;
+        width: 280px;
+        margin-left: 42px;
+        padding-left: 42px;
+    }
+    @include mq_down(md) {
+        width: 100%;
+        .l-lessonDetail__body__sidebar__title {
+            margin-top: 24px;
+            padding: 0 20px;
+            h2 {
+                font-size: 18px;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .l-lessonDetail__body__sidebar__wrap {
+        @include mq_down(md) {
+            background: #fff;
+            padding: 20px;
+            // display:-webkit-box;
+            // display:-ms-flexbox;
+            // display:flex;
+            /* 横幅いっぱい */
+            // -webkit-box-pack: justify;
+            // -ms-flex-pack: justify;
+            // justify-content: space-between;
+            /* 横並び */
+            // -ms-flex-wrap: wrap;
+            // flex-wrap: wrap;
+            // -webkit-box-align: flex-start;
+            // -ms-flex-align: flex-start;
+            // align-items: flex-start
+        }
+    }
+    .teacher__img {
+        border-radius: 50%;
+        background: #fff;
+        padding: 3px;
+        box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+        z-index: 1;
+        width: 120px;
+        margin-right: 10px;
+        margin: auto auto 15px;
+    }
+    .teacher__profile {
+        text-align: center;
+        margin-bottom: 10px;
+        @include mq_up(md) {
+            margin-bottom: 15px;
+        }
+        .teacher__profile__detail {
+            @include mq_down(md) {
+                font-size: 16px;
+                display:-webkit-box;
+                display:-ms-flexbox;
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .name {
+            font-weight: 700;
+            @include mq_up(md) {
+                margin-bottom: 5px;
+            }
+            @include mq_down(md) {
+                margin-right: 5px;
+            }
+        }
+        .evaluation {
+            @include mq_up(md) {
+                margin-bottom: 5px;
+            }
+            img {
+                width: 10px;
+                vertical-align: middle;
+            }
+        }
+        .c-teacher--box__category {
+            @include mq_down(md) {
+                width: 100%;
+                -webkit-box-pack: start;
+                -ms-flex-pack: start;
+                justify-content: flex-start;
+            }
+        }
+    }
+    .techer__detail {
+        font-size: 13px;
+        line-height: 1.5;
+        background: #FAFAFA;
+        padding: 10px;
+        @include mq_up(md) {
+        }
+    }
+}
+
+
+.l-scroll.lessonDetailVersion {
+  @include mq_down(md) {
+    background: transparent;
+  }
+  .l-scroll__box {
+    @include mq_down(md) {
+      padding-top: 24px;
+    }
+  }
+}
+
+

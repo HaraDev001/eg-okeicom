@@ -1,0 +1,95 @@
+
+/*-----------------------------------------------------------------------------------------
+
+
+
+  common
+
+
+
+------------------------------------------------------------------------------------------*/
+body {
+    font-size: 14px;
+    color: #3C3C3B;
+    background: $bgMainColor;
+}
+main {
+    position: relative;
+    margin-top: 63px;
+    @include mq_up(md) {
+        margin-top: 58px;
+    }
+}
+.l-message main {
+    margin-top: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    height: 100vh;
+    padding-top: 61px;
+}
+input::placeholder {
+    color: #CBCBCB;
+}
+
+/* IE */
+input:-ms-input-placeholder {
+    color: #CBCBCB;
+}
+
+/* Edge */
+input::-ms-input-placeholder {
+    color: #CBCBCB;
+}
+form {
+    width: 100%;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+.l-main {
+    @include mq_up(md) {
+        width: 710px;
+    }
+}
+
+
+/*-----------------------------------------------------------------------------------------
+
+
+
+    z-index
+
+
+
+------------------------------------------------------------------------------------------*/
+
+
+
+/*-----------------------------------------------------------------------------------------
+
+
+
+    keyframe
+
+
+
+------------------------------------------------------------------------------------------*/
+@keyframes glovalNavIn {
+    0% { opacity:0; }
+    to { opacity:1; }
+}
+@keyframes alartFadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    99% {
+        opacity: 1;
+        transform: translateY(-81px);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+

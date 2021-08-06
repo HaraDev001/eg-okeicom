@@ -1,0 +1,247 @@
+#header {
+    padding: 10px 24px;
+    background: #fff;
+    z-index: 9999;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid #eee;
+}
+.header__logo {
+    img {
+        width: 55px;
+        @include mq_up(md) {
+            width: 177px;
+        }
+    }
+}
+
+/* ハンバーガーメニュー */
+
+#drawer-checkbox {
+    display: none;
+}
+#drawer-icon {
+    position: relative;
+    display: block;
+    width: 35px;
+    height: 30px;
+    padding: 5px;
+    span {
+        transition: .3s all;
+        position: absolute;
+        display: block;
+        height: 2px;
+        background: $colorBlue;
+        width: 25px;
+        margin-top: 0;
+        &:nth-child(1) {
+            top: 7px;
+        }
+        &:nth-child(2) {
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+        &:nth-child(3) {
+            bottom: 7px;
+        }
+    }
+}
+#drawer-checkbox:checked ~ #drawer-icon {
+    span {
+        background: #fff;
+    }
+    span:nth-child(1) {
+        transform: rotate(45deg);
+        top: 14px;
+    }
+    span:nth-child(2) {
+        display: none;
+    }
+    span:nth-child(3) {
+        transform: rotate(-45deg);
+        bottom: 14px;
+    }
+}
+
+/*　PC
+------------------------------------------------------------------------------------------*/
+.header__menu {
+    ul {
+        li {
+            margin-left: 28px;
+        }
+    }
+}
+.header__link {
+    a {
+        display: block;
+        font-size: 16px;
+        line-height: 36px;
+        height: 38px;
+        padding: 0 15px;
+        border-radius: 3px;
+        border: 1px solid $colorPink;
+    }
+}
+.header__link__register {
+    margin-right: 3px;
+    a {
+        color: #fff;
+        background: $colorPink;
+    }
+}
+.header__link__login {
+    a {
+        color: $colorPink;
+        background: #fff;
+    }
+}
+
+/* SP
+------------------------------------------------------------------------------------------*/
+.header__icon {
+    li {
+        width: 40px;
+        &+ li {
+            margin-left: 10px;
+        }
+        a {
+            display: block;
+            text-align: center;
+        }
+        img {
+            width: 20px;
+            height: 20px;
+        }
+        span {
+            margin-top: 3px;
+            display: block;
+            font-size: 10px;
+            color: #939393;
+        }
+        &.humberger-menu {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            padding-top: 5px;
+        }
+    }
+}
+
+
+
+
+/*-----------------------------------------------------------------------------------------
+
+
+
+    PC版の検索窓
+
+
+
+------------------------------------------------------------------------------------------*/
+@include mq_up(md) {
+    .header__search {
+        margin-right: 18px;
+    }
+    .header__search__submit {
+        button,
+        input[type=submit] {
+            width: 62px;
+            line-height: 36px;
+            height: 38px;
+            padding: 0;
+            color: #fff;
+            background: $colorBlue;
+            text-align: center;
+            border-radius: 0 3px 3px 0;
+        }
+    }
+    .header__search__text {
+        position: relative;
+        &:before {
+            content: "";
+            display: block;
+            background: url(/img/common/icon-header-search.png) center/contain no-repeat;
+            width: 22px;
+            height: 22px;
+            position: absolute;
+            top: 50%;
+            left: 8px;
+            transform: translateY(-50%);
+        }
+        input[type=text] {
+            width: 195px;
+            line-height: 36px;
+            height: 38px;
+            padding: 0 15px 0 40px;
+            border-radius: 3px 0 0 3px;
+        }
+    }
+}
+
+/* ログイン後の画面 */
+.menu-user {
+    display: none;
+    position: absolute;
+    border: 1px solid #d8d8d8;
+    top: 65px;
+    right: 20px;
+    width: 280px;
+    border-radius: 5px;
+    background: #fff;
+    @include mq_up(md) {
+        width: 240px;
+    }
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -11px;
+        right: 17px;
+        z-index: 10;
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-width: 0px 6.5px 11px;
+        border-color: transparent transparent rgb(216, 216, 216);
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        top: -9px;
+        right: 17px;
+        z-index: 11;
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-width: 0px 6.5px 11px;
+        border-color: transparent transparent rgb(255, 255, 255);
+    }
+    &.open {
+        display: block;
+    }
+    .menu-user--change {
+        border-bottom: 1px solid #d8d8d8;
+        a {
+            display: block;
+            text-align: center;
+            padding: 20px 0;
+        }
+    }
+    .menu-user--content {
+        li {
+            border-bottom: 1px solid #eee;
+            a {
+                display: block;
+                padding: 15px 20px;
+            }
+        }
+    }
+}
+
+

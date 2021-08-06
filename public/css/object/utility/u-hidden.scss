@@ -1,0 +1,20 @@
+
+.sp-only {
+  @include mq_up(md) {
+    display: none !important;
+  }
+}
+.pc-only {
+  @include mq_down(md) {
+    display: none !important;
+  }
+}
+
+.cf {
+  zoom: 1;
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+}

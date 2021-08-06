@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AA6CA,kBAAmB,CACf,QAAQ,CAAE,QAAQ,CAClB,SAAS,CAAE,KAAK,CAChB,WAAW,CAAE,GAAG",
+"sources": ["userPayment.scss"],
+"names": [],
+"file": "userPayment.css"
+}

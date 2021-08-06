@@ -1,0 +1,289 @@
+/* 丸いボタン */
+.c-button--round {
+    display: block;
+    border-radius: 100px;
+    margin: auto;
+    width: 240px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    background: #ED6C73;
+    text-align: center;
+    @include mq_up(md) {
+        height: 50px;
+        line-height: 50px;
+    }
+    &.right-arrow-round {
+        position: relative;
+        &:before {
+            content: "";
+            display: block;
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: url(/../img/common/icon-arrow-round-right-white.png) center/contain no-repeat;
+        }
+    }
+}
+
+
+/* タブボタン */
+.c-tab {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    /* 横幅いっぱい */
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    /* 横並び */
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.c-tab--button {
+    width: 49%;
+    @include mq_up(md) {
+        width: 164px;
+    }
+    a,
+    button {
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 30px;
+        display: inline-block;
+        text-align: center;
+        border: 1px solid $colorPink;
+        background: #fff;
+        color: $colorPink;
+    }
+    &.selected a,
+    &.selected button {
+        background: $colorPink;
+        color: #fff;
+    }
+}
+
+
+/* タブボタン */
+.c-button--tab {
+    width: 100%;
+    .c-button--tab--inner {
+        display:-webkit-box;
+        display:-ms-flexbox;
+        display:flex;
+        /* 横幅いっぱい */
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        /* 横並び */
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .c-button--tab--box {
+        text-align: center;
+        border: 1px solid #BBBFD8;
+        color: #BBBFD8;
+        border-radius: 3px;
+        padding: 10px 0;
+        &.selected {
+            border: 1px solid #373B50;
+            background: #373B50;
+            color: #fff;
+        }
+    }
+    &.top-tab {
+        padding-bottom: 20px;
+        border-bottom: 1px solid #EFEFEF;
+        @include mq_down(md) {
+            padding: 10px 20px;
+        }
+    }
+    &.two-tab .c-button--tab--box {
+        width: 49%;
+    }
+    &.three-tab .c-button--tab--box {
+        width: 32%;
+    }
+    &.four-tab .c-button--tab--box {
+        width: 24%;
+    }
+}
+
+/* もっと見るのボタン */
+.c-openButton {
+    text-align: center;
+    padding: 15px 0;
+    a {
+        color: #3188FF;
+    }
+    img {
+        width: 12px;
+        vertical-align: middle;
+        display: inline-block;
+        margin-right: 4px;
+    }
+    span.close {
+        display: inline-block;
+        padding: 10px 60px;
+        border: 1px solid #3188FF;
+    }
+}
+
+
+
+/* 四角形のピンク色のボタン */
+.c-button--square__pink {
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    max-width: 328px;
+    margin: auto;
+    background: #ED6C73;
+    border-radius: 3px;
+    color: #fff;
+    &:disabled {
+        background: #dcdcdc;
+    }
+}
+.c-button--square__blue {
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    max-width: 280px;
+    margin: auto;
+    background: #373B50;
+    border-radius: 3px;
+    color: #fff;
+}
+.c-button--square__gray {
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    max-width: 280px;
+    margin: auto;
+    background: #a9a9a9;
+    border-radius: 3px;
+    color: #fff;
+}
+
+
+/* 追加ボタン */
+.c-button--add {
+    @include mq_down(md) {
+        padding: 10px;
+        border-bottom: 1px solid #EFEFEF;
+    }
+    @include mq_up(md) {
+        margin-bottom: 20px;
+    }
+    a {
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        padding: 10px 60px 10px 30px;
+        border-radius: 3px;
+        border: 1px solid #3188FF;
+        color: #3188FF;
+        font-weight: 700;
+        transition: .3s;
+        &:before {
+            content: "";
+            display: block;
+            width: 12px;
+            height: 12px;
+            background: url(/../img/common/icon-add-blue.png) center/contain no-repeat;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        &:hover {
+            background: #EBF4FF;
+        }
+    }
+    &.border-dashed a {
+        border: 1px dashed #3188FF;
+    }
+}
+
+.c-button--minus {
+    @include mq_down(md) {
+        padding: 10px;
+        border-bottom: 1px solid #EFEFEF;
+    }
+    @include mq_up(md) {
+        margin-bottom: 20px;
+    }
+    a, button {
+        position: relative;
+        display: inline-block;
+        padding: 10px 60px 10px 30px;
+        border-radius: 3px;
+        border: 1px solid #ED6C73;
+        color: #ED6C73;
+        font-weight: 700;
+        background: #fff;
+        &:before {
+            content: "";
+            display: block;
+            width: 12px;
+            height: 12px;
+            background: url(/../img/common/icon-minus-pink.png) center/contain no-repeat;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+
+/* 編集・削除ボタン */
+.c-button--edit {
+    width: 105px;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    /* 横幅いっぱい */
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    /* 横並び */
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    /* 高さ中央揃え */
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    &.one-button {
+        width: 50px;
+    }
+    .c-button--edit--link {
+        display: block;
+        width: 50px;
+        padding: 3px 0;
+        border-radius: 3px;
+        background: #fff;
+        text-align: center;
+        cursor: pointer;
+        &:nth-child(2) {
+            margin-left: 5px;
+        }
+        &.delete {
+            border: 1px solid #ED6C73;
+            color: #ED6C73;
+        }
+        &.edit {
+            border: 1px solid #373B50;
+            color: #373B50;
+        }
+    }
+}
+

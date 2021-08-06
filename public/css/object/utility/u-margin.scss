@@ -1,0 +1,81 @@
+
+/* ----------------------------------------------------------------------
+
+    margin-top
+
+---------------------------------------------------------------------- */
+.u-mt0 { margin-top: 0 !important; }
+.u-mt3 { margin-top: 3px !important; }
+.u-mt5 { margin-top: 5px !important; }
+.u-mt10 { margin-top: 10px !important; }
+.u-mt14 { margin-top: 14px !important; }
+.u-mt15 { margin-top: 15px !important; }
+.u-mt21 { margin-top: 21px !important; }
+.u-mt30 { margin-top: 30px !important; }
+@include mq_down(md) {
+	.u-mt0_sp { margin-top: 0 !important }
+	.u-mt3_sp { margin-top: 3px !important; }
+	.u-mt5_sp { margin-top: 5px !important; }
+	.u-mt10_sp { margin-top: 10px !important; }
+	.u-mt14_sp { margin-top: 14px !important; }
+	.u-mt21_sp { margin-top: 21px !important; }
+}
+@include mq_up(md) {
+    .u-mt20_pc { margin-top: 20px !important; }
+    .u-mt30_pc { margin-top: 30px !important; }
+}
+
+/* ----------------------------------------------------------------------
+
+    margin-right
+
+---------------------------------------------------------------------- */
+.u-mr10 { margin-right: 10px !important; }
+.u-mr20 { margin-right: 20px !important; }
+@include mq_down(md) {
+    .u-mr10_sp { margin-right: 10px !important; }
+}
+@include mq_up(md) {
+    .u-mr20_pc { margin-right: 20px !important; }
+}
+
+
+/* ----------------------------------------------------------------------
+
+    margin-bottom
+
+---------------------------------------------------------------------- */
+.u-mb0 { margin-bottom: 0 !important; }
+.u-mb5 { margin-bottom: 5px !important; }
+.u-mb10 { margin-bottom: 10px !important; }
+.u-mb15 { margin-bottom: 15px !important; }
+.u-mb20 { margin-bottom: 20px !important; }
+@include mq_down(md) {
+    .u-mb0_sp { margin-bottom: 0 !important; }
+    .u-mb3_sp { margin-bottom: 3px !important; }
+    .u-mb5_sp { margin-bottom: 5px !important; }
+    .u-mb10_sp { margin-bottom: 10px !important; }
+    .u-mb14_sp { margin-bottom: 14px !important; }
+    .u-mb21_sp { margin-bottom: 21px !important; }
+}
+
+
+
+/* ----------------------------------------------------------------------
+
+    margin-left
+
+---------------------------------------------------------------------- */
+.u-ml0 { margin-left: 0 !important; }
+.u-ml10 { margin-left: 10px !important; }
+@include mq_up(md) {
+    .u-ml0_pc { margin-left: 0 !important; }
+}
+
+/* ----------------------------------------------------------------------
+
+    other
+
+---------------------------------------------------------------------- */
+.u-inputBox { margin-bottom: 21px; }
+.u-inputBoxShort { margin-bottom: 12px; }

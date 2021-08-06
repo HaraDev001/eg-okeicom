@@ -1,0 +1,128 @@
+@charset "UTF-8";
+
+$breakpoint-up: (
+    'sm': 'screen and (min-width: 400px)',
+    'md': 'screen and (min-width: 896px)',
+    'lg': 'screen and (min-width: 1020px)',
+    ) !default;
+
+$breakpoint-down: (
+    'sm': 'screen and (max-width: 399px)',
+    'md': 'screen and (max-width: 897px)',
+    'lg': 'screen and (max-width: 1020px)',
+    ) !default;
+
+@mixin mq_up($breakpoint: md) {
+    @media #{map-get($breakpoint-up, $breakpoint)} {
+        @content;
+    }
+}
+
+@mixin mq_down($breakpoint: md) {
+    @media #{map-get($breakpoint-down, $breakpoint)} {
+        @content;
+    }
+}
+
+/* Color */
+$colorBlue: #373B50;
+$colorPink: #ED6C73;
+$colorGray: #797979;
+$colorGreem: #5CC964;
+$colorRed: #ED4646;
+
+/* BgColor */
+$bgMainColor: #F6F5F7;
+
+/* OtherColor */
+$colorTextLink: #3399ff;
+$colorBlackWhite: #1D1D1D;
+$colorBorderColor: #707070;
+
+
+
+/*  */
+
+.teacher-participant-list {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    /* 横幅いっぱい */
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    /* 横並び */
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    padding: 20px;
+    &:not(:last-child) {
+        border-bottom: 1px solid #EFEFEF;
+    }
+}
+.teacher-participant-list-button {
+    width: 40px;
+}
+.teacher-participant-list-detail {
+    flex: 1;
+}
+.teacher-participant-list-profile {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    /* 横幅いっぱい */
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    /* 横並び */
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    @include mq_up(md) {
+        margin-bottom: 20px;
+    }
+}
+.teacher-participant-list-content {
+    &.participant-button {
+        width: 40px;
+        padding-right: 10px;
+    }
+    &.participant-img {
+        width: 60px;
+    }
+    &.participant-detail {
+        flex: 1;
+        padding-left: 15px;
+        @include mq_up(md) {
+            padding-left: 20px;
+        }
+        .participant-detail-content {
+            &:not(:last-child) {
+                margin-bottom: 8px;
+                @include mq_up(md) {
+                    margin-bottom: 5px;
+                }
+            }
+            span.label {
+                display: inline-block;
+                text-align: center;
+                width: 70px;
+                padding: 2px 0;
+                border-radius: 3px;
+                background: #EFEFEF;
+                color: #7C7C7C;
+                font-size: 12px;
+            }
+        }
+    }
+}
+.teacher-participant-list-reason {
+    .reason-inner {
+        border: 1px solid #D6D6D6;
+        border-radius: 3px;
+        background: #FDFDFD;
+        padding: 10px;
+    }
+}

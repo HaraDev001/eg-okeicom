@@ -1,0 +1,78 @@
+/*-----------------------------------------------------------------------------------------
+
+
+
+  /resources/views/common/nav.php
+
+
+
+------------------------------------------------------------------------------------------*/
+/* SP
+------------------------------------------------------------------------------------------*/
+@include mq_down(md) {
+    #nav-global {
+        display: block;
+        position: fixed;
+        z-index: 100000;
+        top: 0;
+        left: 0;
+        padding: 10px 0;
+        height: 100%;
+        width: 100%;
+        transform: translateX(-100%);
+        transition: all .2s ease-out;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        background: $bgMainColor;
+        &.open--nav {
+            transform: translateX(0);
+            transition: all .2s ease-out;
+            display: block;
+            -webkit-animation: show-drawer .25s ease-in-out 0s;
+            -moz-animation: show-drawer .25s ease-in-out 0s;
+            -ms-animation: show-drawer .25s ease-in-out 0s;
+            -o-animation: show-drawer .25s ease-in-out 0s;
+            animation: show-drawer .25s ease-in-out 0s;
+            -webkit-animation-fill-mode: both;
+            -moz-animation-fill-mode: both;
+            -ms-animation-fill-mode: both;
+            -o-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+    }
+    .nav-global__back {
+        text-align: right;
+        padding-right: 20px;
+        margin-bottom: 10px;
+        a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+    }
+    .nav-global__list {
+        li {
+          margin-bottom: 1px;
+        }
+        a {
+            position: relative;
+            display: block;
+            padding: 15px 15px 15px 35px;
+            background: #fff;
+            &:before {
+                content: "";
+                display: block;
+                background: url(/img/common/icon-arrow-right-pink.png) center/contain no-repeat;
+                width: 10px;
+                height: 10px;
+                position: absolute;
+                left: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}

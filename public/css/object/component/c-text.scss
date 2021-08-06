@@ -1,0 +1,127 @@
+/* タイトル */
+.c-text--title {
+    font-size: 18px;
+    font-weight: 700;
+}
+/* 詳細 */
+.c-text--detail {
+    margin-top: 10px;
+    line-height: 1.6;
+    font-size: 13px;
+}
+
+
+
+/*
+    星
+*/
+.c-text--evaluation {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    .star {
+        img {
+            width: 16px;
+        }
+        .evaluation {
+            font-size: 12px;
+            font-weight: 700;
+        }
+    }
+    .review {
+        font-size: 12px;
+        margin-left: 10px;
+        color: #B4B4B4;
+    }
+    .sentence {
+        margin-top: 15px;
+        padding: 10px;
+        background: #FAFAFA;
+        font-size: 12px;
+    }
+}
+
+
+
+/*
+    カテゴリー
+*/
+.c-text--category {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    li {
+        margin-bottom: 5px;
+        display: inline-block;
+        padding: 1px 10px;
+        border: 1px solid #ED6C73;
+        color: #ED6C73;
+        border-radius: 30px;
+        &:not(:last-child) {
+            margin-right: 5px;
+        }
+    }
+}
+
+
+
+/*
+    性別
+*/
+.c-text--sex {
+    display: inline-block;
+    color: #fff;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 400;
+    &.woman {
+        background: #ED6C73;
+    }
+    &.man {
+        background: #373B50;
+    }
+    &.gender {
+        background: #808080;
+    }
+}
+
+
+/*
+    注目
+*/
+.c-text--attention {
+    padding: 10px;
+    p {
+        line-height: 1.4;
+        font-size: .9em;
+        @include mq_up(md) {
+            line-height: 1.6;
+        }
+        &:not(:last-child) {
+            margin-bottom: 1em;
+        }
+    }
+    &.bg-gray {
+        background: #f7f7f7;
+    }
+    &.bg-yellow {
+        background: #FFFBE3;
+    }
+}

@@ -1,0 +1,119 @@
+.l-wrap {
+    width: 100%;
+    @include mq_up(md) {
+        width: 1000px;
+        margin: auto;
+    }
+}
+.l-wrap--single {
+    position: relative;
+    width: 100%;
+    margin: auto auto 42px;
+    @include mq_up(md) {
+        max-width: 600px;
+        max-width: 600px;
+        width: 100%;
+        &.login {
+            max-width: 440px;
+            min-width: 440px;
+            width: 100%;
+        }
+    }
+    .l-wrap--single__inner {
+        position: relative;
+        width: 100%;
+    }
+}
+
+/*
+    title
+*/
+.l-wrap--title {
+    padding: 30px 20px;
+    @include mq_up(md) {
+        padding: 25px 0 25px;
+    }
+    &.profile {
+        @include mq_down(md) {
+            padding: 30px 0;
+        }
+    }
+}
+.l-message .l-wrap--title {
+    padding: 10px 0 10px 10px !important;
+}
+.login-user .l-wrap--title {
+    @include mq_up(md) {
+        padding-bottom: 25px;
+    }
+}
+
+/*
+    body
+*/
+.l-wrap--body {
+    border-bottom: 1px solid #EFEFEF;
+    // border-top: 1px solid #eee;
+    @include mq_up(md) {
+        background: #fff;
+        padding: 30px 0;
+    }
+}
+.login-user .l-wrap--body {
+    border-bottom: none;
+    @include mq_down(md) {
+        padding-bottom: 20px;
+    }
+    @include mq_up(md) {
+        background: transparent;
+    }
+}
+.l-wrap--single .l-wrap--body {
+    border-bottom: none;
+    @include mq_up(md) {
+        background: transparent;
+        padding: 0;
+    }
+}
+.l-message .l-wrap--body {
+    height: 100%;
+    border-top: 0;
+    padding: 0;
+}
+
+
+.l-wrap--main {
+    width: 100%;
+    @include mq_up(md) {
+        max-width: 710px;
+    }
+}
+
+
+/* ログインユーザー */
+.login-user .l-wrap--main {
+    @include mq_up(md) {
+        max-width: 750px;
+    }
+}
+.l-message .l-wrap--main {
+    @include mq_up(md) {
+        padding: 0;
+        flex: 1;
+        max-width: 100%;
+        border-left: 1px solid #F0F0F0;
+    }
+}
+.l-wrap--main--inner {
+    background: #fff;
+    @include mq_up(md) {
+        padding: 20px;
+    }
+}
+.dashboard > .l-wrap--main--inner {
+    background: transparent;
+}
+
+/*  */
+
+

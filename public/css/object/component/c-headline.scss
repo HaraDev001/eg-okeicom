@@ -1,0 +1,28 @@
+
+@include mq_down(md) {
+    .c-sp-headline {
+        font-size: 13px;
+        font-weight: 700;
+        padding: 18px 20px 7px;
+    }
+}
+
+/* screen用のheadline */
+.c-headline--screen {
+    font-size: 24px;
+    font-weight: 700;
+    @include mq_up(md) {
+        font-size: 30px;
+    }
+}
+
+/* ブロック要素の見出し */
+.c-headline--block {
+    padding-left: 20px;
+    margin-bottom: 5px;
+    font-size: 13px;
+    font-weight: 700;
+    @include mq_up(md) {
+        padding-left: 10px;
+    }
+}

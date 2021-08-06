@@ -1,0 +1,239 @@
+@charset "UTF-8";
+
+$breakpoint-up: (
+    'sm': 'screen and (min-width: 400px)',
+    'md': 'screen and (min-width: 896px)',
+    'lg': 'screen and (min-width: 1020px)',
+    ) !default;
+
+$breakpoint-down: (
+    'sm': 'screen and (max-width: 399px)',
+    'md': 'screen and (max-width: 897px)',
+    'lg': 'screen and (max-width: 1020px)',
+    ) !default;
+
+@mixin mq_up($breakpoint: md) {
+    @media #{map-get($breakpoint-up, $breakpoint)} {
+        @content;
+    }
+}
+
+@mixin mq_down($breakpoint: md) {
+    @media #{map-get($breakpoint-down, $breakpoint)} {
+        @content;
+    }
+}
+
+/* Color */
+$colorBlue: #373B50;
+$colorPink: #ED6C73;
+$colorGray: #797979;
+$colorGreem: #5CC964;
+$colorRed: #ED4646;
+
+/* BgColor */
+$bgMainColor: #F6F5F7;
+
+/* OtherColor */
+$colorTextLink: #3399ff;
+$colorBlackWhite: #1D1D1D;
+$colorBorderColor: #707070;
+
+
+
+/* 画像一覧表示 */
+.couse-detail-img {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    /* 横幅いっぱい */
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    /* 横並び */
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    overflow: hidden;
+    @include mq_down(md) {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+    .couse-detail-img-inner {
+        width: 32%;
+        position: relative;
+        background: #EDEDED;
+        @include mq_down(md) {
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(4) {
+                margin-right: 2%;
+            }
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3) {
+                margin-bottom: 2%;
+            }
+        }
+        @include mq_up(md) {
+            width: 19%;
+        }
+        img {
+            position: absolute;
+        }
+        .add-file {
+            position: absolute;
+            display: none;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            border: 1px dashed #ED6C73;
+            background: #fff;
+            &.active {
+                display: block;
+                input {
+                    z-index: 1;
+                    cursor: pointer !important;
+                }
+            }
+            &:before {
+                content: "";
+                display: block;
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                z-index: 1;
+                -webkit-transform: translate(-50%,-50%) scale(1);
+                transform: translate(-50%,-50%) scale(1);
+                background: url(/../../img/common/icon-add-pink.png) center/contain no-repeat;
+                @include mq_up(md) {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+            input[type=file] {
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .change-file {
+            cursor: pointer;
+            position: absolute;
+
+            width: 35px;
+            height: 35px;
+            text-align: center;
+            display: none;
+            @include mq_up(md) {
+                width: 40px;
+                height: 40px;
+                bottom: 0;
+                right: 0;
+            }
+            @include mq_down(md) {
+                top: 0;
+                left: 0;
+            }
+            &.active {
+                z-index: 10;
+                display: block;
+            }
+            .change-file-inner {
+                display: block;
+                position: relative;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                img {
+                    right: 0;
+                    bottom: 0;
+                }
+                button {
+                    position: absolute;
+                    right: 0;
+                    width: 100%;
+                    padding: 10px;
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 3px;
+                    resize: none;
+                    @include mq_up(md) {
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+            }
+        }
+        @include mq_up(md) {
+            .delete-file {
+                display: none;
+                &.active {
+                    display: block;
+                }
+                &:before,
+                &:after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                }
+            }
+        }
+        @include mq_down(md) {
+            .delete-icon {
+                cursor: pointer;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 35px;
+                height: 35px;
+                text-align: center;
+                display: none;
+                img {
+                    position: static;
+                }
+                &.active {
+                    z-index: 10;
+                    display: block;
+                }
+            }
+        }
+    }
+}
+@include mq_up(md) {
+    .couse-detail-img .c-img--cover:hover .delete-file:before {
+        background: rgba(0,0,0,0.5);
+        z-index: 1;
+    }
+
+    .couse-detail-img .c-img--cover:hover .delete-file:after {
+        background: url(/img/common/icon-batsu-white.png) center/contain no-repeat;
+        width: 50px;
+        height: 50px;
+        top: 50%;
+        left: 50%;
+        z-index: 2;
+        -webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+    }
+}
+
+
+/* コース詳細：レッスン一覧 */
+.teacherCourseDetail {
+
+}

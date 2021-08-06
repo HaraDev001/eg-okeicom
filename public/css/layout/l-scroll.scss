@@ -1,0 +1,37 @@
+/*-----------------------------------------------------------------------------------------
+
+
+
+  スクロール
+
+
+
+------------------------------------------------------------------------------------------*/
+.l-scroll {
+  background: #fff;
+}
+.l-scroll__wrap {
+  padding-bottom: 38px;
+  @include mq_up(md) {
+    padding-bottom: 61px;
+  }
+
+}
+.l-scroll__box {
+	padding-top: 38px;
+	@include mq_up(md) {
+    padding-top: 61px;
+  }
+}
+
+.l-scroll__list {
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+	@include mq_down(md) {
+		padding: 0 20px;
+	}
+}
+.l-scroll__list__wrap {
+  flex-wrap: nowrap;
+	white-space: nowrap;
+}

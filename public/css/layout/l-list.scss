@@ -1,0 +1,229 @@
+/*-----------------------------------------------------------------------------------------
+
+
+
+    口コミリスト
+
+
+
+------------------------------------------------------------------------------------------*/
+.l-list--review {
+    
+}
+
+/*-----------------------------------------------------------------------------------------
+
+
+
+    お知らせ一覧
+
+
+
+------------------------------------------------------------------------------------------*/
+.l-list--news {}
+
+
+
+/*-----------------------------------------------------------------------------------------
+
+
+
+    講師リスト
+
+
+
+------------------------------------------------------------------------------------------*/
+.l-list--teacher__tab {
+    padding: 10px 20px;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    text-align: center;
+    border-bottom: 1px solid #EFEFEF;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    @include mq_down(md) {
+        background: #fff;
+        margin-bottom: 5px;
+    }
+    @include mq_up(md) {
+        padding: 15px 0;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+    .tab-box {
+        border: 1px solid #BBBFD8;
+        color: #BBBFD8;
+        border-radius: 3px;
+        width: 33%;
+        padding: 10px 0;
+        @include mq_up(md) {
+            width: 200px !important;
+            &:not(:last-child) {
+                margin-right: 5px;
+            }
+        }
+        &.selected {
+            border: 1px solid #373B50;
+            background: #373B50;
+            color: #fff;
+        }
+    }
+    &.three-tab .tab-box {
+        width: 33%;
+    }
+    &.two-tab .tab-box {
+        width: 49%;
+    }
+}
+
+/*-----------------------------------------------------------------------------------------
+
+
+
+  content
+
+
+
+------------------------------------------------------------------------------------------*/
+.l-contentList {
+    @include mq_up(md) {
+        background: #fff;
+        padding: 45px 0;
+        border-bottom: 1px solid #EFEFEF;
+    }
+}
+.l-contentList__list {
+    width: 100%;
+    @include mq_up(md) {
+        width: 710px;
+    }
+}
+.l-contentList__list__headline {
+    @include mq_up(md) {
+        padding-bottom: 10px;
+        border-bottom: 2px solid #000;
+    }
+    @include mq_down(md) {
+        background: #fff;
+        margin-bottom: 5px;
+    }
+    .headlineContent {
+        @include mq_down(md) {
+            width: 100%;
+            padding: 10px 20px;
+        }
+    }
+    .info {
+        @include mq_down(md) {
+            padding-bottom: 10px;
+            border-bottom: 1px solid #EFEFEF;
+        }
+        .title {
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        .number {
+            font-size: 12px;
+            color: #C1C1C1;
+        }
+    }
+    .sort {
+        span {
+            font-size: 12px;
+            display: inline-block;
+            margin-right: 5px;
+        }
+        .c-selectBox {
+            flex-grow:1;
+            select {
+              padding: 10px;
+              width: 100%;
+              @include mq_up(md) {
+                width: 200px;
+            }
+        }
+    }
+}
+}
+.l-content--wrap {
+    background: #fff;
+}
+
+
+
+/*-----------------------------------------------------------------------------------------
+
+
+
+  pagenation
+
+
+
+------------------------------------------------------------------------------------------*/
+.l-pagenation {
+    margin-top: 5px;
+    @include mq_up(md) {
+        margin-top: 30px;
+    }
+    @include mq_down(md) {
+        padding: 24px 20px 14px;
+    }
+    .l-pagenation__list {
+        display:-webkit-box;
+        display:-ms-flexbox;
+        display:flex;
+        /* 横幅いっぱい */
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        /* 横並び */
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        li {
+            margin-right: 10px;
+            margin-bottom: 10px;
+            a {
+                display: block;
+                border-radius: 3px;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                @include mq_down(md) {
+                    background: #fff;
+                }
+                @include mq_up(md) {
+                    background: #F7F7F7;
+                    color: #3188FF;
+                    font-weight: 700;
+                }
+            }
+            &.selected a {
+                color: #000;
+                @include mq_down(md) {
+                    color: #ED6C73;
+                    border: 1px solid #ED6C73;
+                }
+                @include mq_up(md) {
+
+                }
+            }
+        }
+    }
+}
+
+
+
+/* ユーザー画面：取引一覧 */
+.l-list--deal--period {
+
+}
+
+
+
+

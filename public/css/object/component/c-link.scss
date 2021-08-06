@@ -1,0 +1,24 @@
+
+/*
+	1つ前の画面に戻る
+*/
+.c-link--back {
+	display: inline-block;
+	position: relative;
+	color: #3188FF;
+	&:before {
+		content: "";
+		display: inline-block;
+		width: 12px;
+		height: 12px;
+		margin-right: 5px;
+		background: url(/../../img/common/icon-arrow-left-blue.png) no-repeat center/contain;
+	}
+}
+/* case */
+.l-wrap--single .c-link--back {
+	margin-bottom: 5px;
+	@include mq_up(md) {
+		margin-bottom: 10px;
+	}
+}

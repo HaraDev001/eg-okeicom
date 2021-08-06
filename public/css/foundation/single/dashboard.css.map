@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AA0CA,UAAW,CACV,OAAO,CAAE,MAAM,CAEhB,kBAAmB,CAClB,UAAU,CAAE,IAAI,CAChB,mCAAmB,CAClB,aAAa,CAAE,IAAI,CAGrB,uBAAwB,CACvB,aAAa,CAAE,iBAAiB,CAChC,yBAAE,CACD,OAAO,CAAE,KAAK,CACd,OAAO,CAAE,SAAS",
+"sources": ["dashboard.scss"],
+"names": [],
+"file": "dashboard.css"
+}

@@ -1,0 +1,36 @@
+
+.u-text--link {
+    color: #3188FF;
+    text-decoration: underline;
+}
+
+/*
+    font-size
+*/
+.u-text--big {
+    font-size: 1.1em;
+    font-weight: 700;
+}
+.u-text--small {
+    font-size: .9em;
+}
+
+/*
+    text-align
+*/
+.u-textAlign__right {
+    text-align: right;
+}
+.u-textAlign__left {
+    text-align: left;
+}
+.u-textAlign__center {
+    text-align: center;
+}
+
+/*
+    line-height
+*/
+.u-text--sentence {
+    line-height: 1.6;
+}

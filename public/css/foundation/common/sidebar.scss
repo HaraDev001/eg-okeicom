@@ -1,0 +1,170 @@
+
+#sidebar {
+    width: 100%;
+    @include mq_down(md) {
+        margin-bottom: 5px;
+        background: #fff;
+    }
+    @include mq_up(md) {
+        width: 250px;
+    }
+    &.sidebar__tab {
+        @include mq_down(md) {
+            margin-bottom: 1px;
+        }
+    }
+    .headline {
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #000;
+        p {
+            font-size: 18px;
+            font-weight: 700;
+        }
+    }
+    &.other-sidebar {
+        @include mq_down(md) {
+            margin-top: 10px;
+            border-top: 1px solid #F0F0F0;
+        }
+    }
+}
+.sidebar__list {
+    @include mq_up(md) {
+        li {
+            margin-bottom: 12px;
+            button,
+            a {
+                position: relative;
+                border-radius: 30px;
+                padding: 10px 20px 10px 30px;
+                display: inline-block;
+                background: #F7F7F7;
+                color: #3188FF;
+                &:before {
+                    content: '';
+                    display: block;
+                    width: 12px;
+                    height: 12px;
+                    position: absolute;
+                    left: 15px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background: url(/../img/common/icon-arrow-right-blue.png) center/contain no-repeat;
+                }
+            }
+            &.selected button,
+            &.selected a {
+                color: #3C3C3B;
+                font-weight: 700;
+                &:before {
+                    background: url(/../img/common/icon-sidebar-arrow-right-black.png) center/contain no-repeat;
+                }
+            }
+        }
+    }
+    @include mq_down(md) {
+        display:-webkit-box;
+        display:-ms-flexbox;
+        display:flex;
+        /* 横幅いっぱい */
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        /* 横並び */
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        ul {
+            width: 100%;
+        }
+        li {
+            width: 50%;
+            border-bottom: 1px solid #F0F0F0;
+            &:nth-child(2n) {
+                border-left: 1px solid #F0F0F0;
+            }
+            a, button {
+                position: relative;
+                display: block;
+                height: 40px;
+                line-height: 40px;
+                width: 100%;
+                padding: 0 0 0 30px;
+                color: #3188FF;
+                &:before {
+                    content: "";
+                    display: block;
+                    width: 10px;
+                    height: 10px;
+                    position: absolute;
+                    left: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background: url(/../img/common/icon-arrow-right-blue.png) center/contain no-repeat;
+                }
+            }
+        }
+        &.long li {
+            width: 100%;
+        }
+    }
+}
+
+
+/* tab */
+#sidebar.sidebar__tab {
+    @include mq_down(md) {
+        li {
+            text-align: center;
+            a, button {
+                font-weight: 700;
+                height: 50px;
+                line-height: 50px;
+            }
+            &.selected {
+                a, button {
+                    color: #3C3C3B;
+                    &:before {
+                        transform:rotate(90deg) translateX(-50%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* ログイン：ユーザー */
+.login-user {
+    #sidebar {
+        @include mq_up(md) {
+            width: 210px;
+        }
+    }
+
+}
+
+.login-user .sidebar__list {
+    li {
+        margin-bottom: 0;
+        border-bottom: 1px solid #eee;
+        button, a {
+            background: #fff;
+            border-radius: 0;
+            width: 100%;
+            padding: 15px 15px 15px 30px;
+        }
+    }
+}
+.sidebar-change {
+    margin-bottom: 20px;
+    button, a {
+        display: block;
+        width: 100%;
+        padding: 20px;
+        border-radius: 50px;
+        text-align: center;
+        background: #fff;
+        text-decoration: none;
+    }
+}

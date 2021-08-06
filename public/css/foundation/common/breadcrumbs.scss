@@ -1,0 +1,30 @@
+
+#breadcrumbs {
+  padding: 10px 0;
+  background: #fff;
+  @include mq_down(md) {
+    .l-allWrapper {
+      padding: 0 20px;
+    }
+  }
+  li {
+    display: inline-block;
+    font-size: 12px;
+    img {
+      vertical-align: middle;
+      width: 13px;
+      height: 13px;
+    }
+    &:after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: no-repeat url(/img/common/icon-arrow-right-gray.png) center / contain;
+      display: inline-block;
+      padding: 0 10px;
+    }
+    &:last-child::after {
+      display: none;
+    }
+  }
+}

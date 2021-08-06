@@ -1,0 +1,40 @@
+/* 確認ボタン */
+.l-button--confirm {
+    margin-top: 24px;
+    text-align: center;
+    .l-button--confirm__inner {
+        display: inline-block;
+    }
+}
+
+
+/* 確定ボタン */
+.l-button--submit {
+    margin-top: 30px;
+    text-align: center;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    /* 横幅いっぱい */
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    /* 横並び */
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    > input {
+        padding: 15px;
+    }
+    .two-button {
+        
+    }
+    .l-button--submit--two {
+        width: 150px;
+        @include mq_up(md) {
+            width: 200px;
+        }
+        &:first-child {
+            margin-right: 10px;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+.l-alart {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9998;
+    padding: 20px;
+    animation-name: alartFadeOut;
+    animation-duration: .7s;
+    animation-delay: 2.5s;
+    animation-fill-mode: forwards;
+    @include mq_up(md) {
+        font-size: 18px;
+        padding: 30px 0;
+    }
+    &.errorAlart {
+        background: rgba(237, 70, 70, .95);
+        color: #fff;
+    }
+    &.successAlart {
+        background: rgba(62, 137, 224, .95);
+        color: #fff;
+    }
+    p {
+        text-align: center;
+    }
+}
+
+.l-alart__text {
+    padding: 1em;
+    margin-top: .5em;
+    &.errorAlart {
+        background: #ffeaea;
+        color: #ed4646;
+    }
+    &.successAlart {
+        background: #eaf4ff;
+        color: 3e89e0;
+    }
+}
+

@@ -1,0 +1,188 @@
+/*-----------------------------------------------------------------------------------------
+
+
+
+  modal
+
+
+
+------------------------------------------------------------------------------------------*/
+.l-overlay {
+	z-index: 100;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color:rgba(0,0,0,0.5);
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	&.l-modal--search {
+		-webkit-box-align: start;
+			-ms-flex-align: start;
+			align-items: flex-start;
+	}
+}
+.l-modal--search__content {
+	width: 100%;
+	margin-top: 63px;
+	padding: 13px 20px;
+	background: #fff;
+}
+.l-modal--search__input {
+	position: relative;
+	&:before {
+		content: "";
+		display: block;
+		background: url(/img/common/icon-header-search.png) center/contain no-repeat;
+		width: 22px;
+		height: 22px;
+		position: absolute;
+		top: 50%;
+		left: 8px;
+		transform: translateY(-50%);
+	}
+	input {
+		width: 100%;
+		background: #F2F2F2;
+		border: 1px solid #DBDBDB;
+		line-height: 40px;
+		height: 42px;
+		padding: 0 15px 0 40px;
+		border-radius: 3px 0 0 3px;
+	}
+}
+
+/* 講師管理画面：参加者詳細 */
+.l-modal {
+	display: none;
+	z-index: 1001;
+
+	/* 横並び */
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	/* 横幅いっぱい */
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background: rgba(0, 0, 0, .5);
+	&.open {
+		display:-webkit-box;
+		display:-ms-flexbox;
+		display:flex;
+	}
+	.l-modal--wrap {
+		width: 300px;
+		.l-modal--wrap--inner {
+			background: #fff;
+			border-radius: 3px;
+		}
+		.close-icon {
+
+		}
+	}
+	.l-modal--content {
+		padding: 15px 20px;
+		&:not(.border-none) {
+			border-bottom: 1px solid #F0F0F0;
+		}
+		.sub {
+			color: #9D9D9D;
+			font-size: 12px;
+			margin-bottom: 5px;
+		}
+	}
+	.l-modal--header {
+		display:-webkit-box;
+		display:-ms-flexbox;
+		display:flex;
+		/* 横幅いっぱい */
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+		/* 横並び */
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		-webkit-align-items: center;
+        -ms-align-items: center;
+        align-items: center;
+	}
+	.l-modal--header--img {
+		width: 90px;
+	}
+	.l-modal--header--button {
+		padding-left: 10px;
+		flex: 1;
+		li {
+			a {
+				display: block;
+				width: 100%;
+				border-radius: 3px;
+				text-align: center;
+                padding: 10px 0;
+                cursor: pointer;
+			}
+			&.message {
+				margin-bottom: 5px;
+				a {
+					border: 1px solid #373B50;
+					color: #373B50;
+				}
+			}
+			&.reject a {
+				border: 1px solid #ED6C73;
+				color: #ED6C73;
+			}
+		}
+	}
+	.l-modal--detail {
+		display:-webkit-box;
+		display:-ms-flexbox;
+		display:flex;
+		/* 横幅いっぱい */
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+		/* 横並び */
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		.l-modal--detail--box {
+			width: 50%;
+			&:not(:last-child) {
+				border-right: 1px solid #F0F0F0;
+			}
+		}
+	}
+}
+
+
+.close-button {
+	text-align: right;
+	.close-icon {
+		display: block;
+		margin-right: 0;
+		margin-left: auto;
+		width: 70px;
+	}
+}
+
+
+
+
+
+

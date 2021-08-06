@@ -1,0 +1,47 @@
+
+/* ----------------------------------------------------------------------
+
+  padding-top
+
+---------------------------------------------------------------------- */
+
+
+
+/* ----------------------------------------------------------------------
+
+  padding-right
+
+---------------------------------------------------------------------- */
+.u-pr10 { padding-right: 10px !important; }
+
+
+/* ----------------------------------------------------------------------
+
+  padding-bottom
+
+---------------------------------------------------------------------- */
+.u-pb5 { padding-bottom: 5px !important; }
+.u-pb10 { padding-bottom: 10px !important; }
+@include mq_down(md) {
+	.u-pb0_sp { padding-bottom: 0 !important; }
+  .u-pb10_sp { padding-bottom: 10px !important; }
+  .u-pb20_sp { padding-bottom: 20px !important; }
+}
+
+/* ----------------------------------------------------------------------
+
+  padding-left
+
+---------------------------------------------------------------------- */
+.u-pl10 { padding-left: 10px !important; }
+.u-pl15 { padding-left: 15px !important; }
+.u-pl20 { padding-left: 20px !important; }
+@include mq_down(md) {
+  .u-pl10_sp { padding-left: 10px !important; }
+  .u-pl15_sp { padding-left: 15px !important; }
+  .u-pl20_sp { padding-left: 20px !important; }
+}
+@include mq_up(md) {
+  .u-pl15_pc { padding-left: 15px !important; }
+  .u-pl20_pc { padding-left: 20px !important; }
+}
